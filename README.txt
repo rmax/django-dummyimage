@@ -4,7 +4,9 @@ Django DummyImage
 
 A simple app to generate dummy/filler images on the fly at whatever size you want.
 
-Inspired by http://dummyimage.com/ 
+Inspired by http://dummyimage.com/ and http://github.com/xxx/fakeimage
+
+Demo: 
 
 Usage in templates:
 
