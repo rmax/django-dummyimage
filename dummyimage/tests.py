@@ -17,8 +17,9 @@ from dummyimage.views import _get_color
 class TemplateTagTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.get_url = lambda w, h, fmt: reverse('dummyimage_render',
-                                                args=(w, h, fmt))
+        self.get_url = lambda w, h, fmt: reverse(
+                            'dummyimage.views.render_image',
+                            args=(w, h, fmt))
 
     def get_template(self, arguments):
         return '{%% load dummyimage_tags %%}{%% get_dummyimage_url %s %%}' % arguments
@@ -70,8 +71,9 @@ class TemplateTagTest(TestCase):
 class RenderViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.get_url = lambda w, h, fmt: reverse('dummyimage_render',
-                                                args=(w, h, fmt))
+        self.get_url = lambda w, h, fmt: reverse(
+                            'dummyimage.views.render_image',
+                            args=(w, h, fmt))
 
     def test_sizes_boundaries(self):
         # sizes

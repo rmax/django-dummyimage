@@ -17,7 +17,7 @@ class DummyImageUrlNode(Node):
         self.context_var = context_var
 
     def render(self, context):
-        url = reverse('dummyimage_render',
+        url = reverse('dummyimage.views.render_image',
                 args=(self.width, self.height, self.format))
 
         if self.context_var:
