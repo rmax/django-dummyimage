@@ -6,7 +6,7 @@ A simple app to generate dummy/filler images on the fly at whatever size you wan
 
 Inspired by http://dummyimage.com/ and http://github.com/xxx/fakeimage
 
-Demo: 
+Demo: http://dummyimage.rolandoespinoza.info/
 
 Usage in templates:
 
