@@ -12,7 +12,7 @@ setup(
     author = "Rolando Espinoza La fuente",
     author_email = "darkrho@gmail.com",
     url = "https://github.com/darkrho/django-dummyimage",
-    version = "trunk",
+    version = "0.05",
     packages = find_packages(),
     include_package_data=True,
     zip_safe=False, # because we're including media that Django needs
