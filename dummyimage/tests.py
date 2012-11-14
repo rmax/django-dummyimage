@@ -11,7 +11,8 @@ from django.template import Template
 from django.test import Client
 from django.test import TestCase
 
-from dummyimage.views import _get_color
+from dummyimage.forms import _get_color
+
 
 class TemplateTagTest(TestCase):
     def setUp(self):
@@ -182,6 +183,7 @@ if __name__ == '__main__':
     import os
     from django.core.management.commands.test import Command
 
-    test_argv = [os.sys.argv[0], '', 'dummyimage'] + os.sys.argv[1:]
+    test_argv = [os.sys.argv[0], '',
+                 'dummyimage.RenderViewTest.test_rotation_param'] + os.sys.argv[1:]
     test_command = Command()
     test_command.run_from_argv(test_argv)
