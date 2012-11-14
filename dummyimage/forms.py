@@ -9,13 +9,6 @@ DEFAULT_BG = getattr(settings, 'DUMMYIMAGE_DEFAULT_BG', 'white')
 DEFAULT_TEXT = getattr(settings, 'DUMMYIMAGE_DEFAULT_TEXT', 'grey')
 DEFAULT_BORDER = getattr(settings, 'DUMMYIMAGE_DEFAULT_BORDER', 'grey')
 
-AVAILABLE_FORMATS = (
-    ('jpeg', 'jpeg'),
-    ('jpg', 'jpg'),
-    ('gif', 'gif'),
-    ('png', 'png'),
-)
-
 DEFAULT_COLORS = {
     'BG': DEFAULT_BG,
     'TEXT': DEFAULT_TEXT,
@@ -59,7 +52,6 @@ class DummyImageForm(forms.Form):
     height = forms.IntegerField(min_value=1, max_value=MAX_DIMENSION)
     rotate = forms.IntegerField(min_value=-359, max_value=359, initial=0,
                                 required=False)
-    format = forms.ChoiceField(choices=AVAILABLE_FORMATS)
 
     def clean_bgcolor(self):
         color = self.cleaned_data['bgcolor']
@@ -75,10 +67,6 @@ class DummyImageForm(forms.Form):
         color = self.cleaned_data['bordercolor']
         color = _get_color(color, 'BORDER')
         return color
-
-    def clean_format(self):
-        format = self.cleaned_data['format']
-        return 'jpeg' if format == 'jpg' else format
 
     def clean(self):
         cleaned_data = super(DummyImageForm, self).clean()
