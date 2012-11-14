@@ -7,7 +7,7 @@ ROOT_DIR = os.path.dirname(__file__)
 SOURCE_DIR = os.path.join(ROOT_DIR)
 
 setup(
-    name = "dummyinage",
+    name = "dummyimage",
     description = "Dynamic Dummy Image Generator For Django!",
     author = "Rolando Espinoza La fuente",
     author_email = "darkrho@gmail.com",
