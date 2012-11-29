@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "django-dummyimage",
-    version = "0.1",
+    version = "0.1.1",
     description = "Dynamic Dummy Image Generator For Django!",
     author = "Rolando Espinoza La fuente",
     author_email = "darkrho@gmail.com",
