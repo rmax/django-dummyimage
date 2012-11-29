@@ -1,9 +1,8 @@
-"""
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
+#!/usr/bin/env python
 
-Replace these with more appropriate tests for your application.
-"""
+if __name__ == '__main__':
+    import os
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 from django.core.urlresolvers import reverse
 from django.template import Context
@@ -12,7 +11,8 @@ from django.template import Template
 from django.test import Client
 from django.test import TestCase
 
-from dummyimage.views import _get_color
+from dummyimage.forms import _get_color
+
 
 class TemplateTagTest(TestCase):
     def setUp(self):
@@ -117,7 +117,7 @@ class RenderViewTest(TestCase):
     def test_rotation_param(self):
         ## Check Params
         url = self.get_url(1, 1, 'jpg')
-        
+
         # rotation
         response = self.client.get(url, {'rotate': '-359'})
         self.failUnlessEqual(response.status_code, 200)
@@ -178,3 +178,11 @@ class GetColorTest(TestCase):
         self.failUnlessRaises(KeyError, _get_color, '', 'TYPE')
         self.failUnlessRaises(KeyError, _get_color, '!invalid', 'TYPE')
 
+
+if __name__ == '__main__':
+    import os
+    from django.core.management.commands.test import Command
+
+    test_argv = [os.sys.argv[0], '', 'dummyimage'] + os.sys.argv[1:]
+    test_command = Command()
+    test_command.run_from_argv(test_argv)

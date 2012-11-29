@@ -7,12 +7,12 @@ ROOT_DIR = os.path.dirname(__file__)
 SOURCE_DIR = os.path.join(ROOT_DIR)
 
 setup(
-    name = "dummyinage",
+    name = "dummyimage",
     description = "Dynamic Dummy Image Generator For Django!",
     author = "Rolando Espinoza La fuente",
     author_email = "darkrho@gmail.com",
     url = "https://github.com/darkrho/django-dummyimage",
-    version = "0.05",
+    version = "0.06",
     packages = find_packages(),
     include_package_data=True,
     zip_safe=False, # because we're including media that Django needs
