@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-
-if __name__ == '__main__':
-    import os
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
-
 from django.core.urlresolvers import reverse
 from django.template import Context
 from django.template import Template
@@ -137,6 +131,12 @@ class RenderViewTest(TestCase):
         response = self.client.get(url, {'rotate': '360'})
         self.failUnlessEqual(response.status_code, 404)
 
+    def test_text_parameters(self):
+        url = self.get_url(1, 1, 'jpg')
+
+        response = self.client.get(url, {'text': 'asdf'})
+        # TODO: verify actual font rendering
+        self.assertEquals(response.status_code, 200)
 
 
 class GetColorTest(TestCase):
