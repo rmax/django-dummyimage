@@ -178,11 +178,3 @@ class GetColorTest(TestCase):
         self.failUnlessRaises(KeyError, _get_color, '', 'TYPE')
         self.failUnlessRaises(KeyError, _get_color, '!invalid', 'TYPE')
 
-
-if __name__ == '__main__':
-    import os
-    from django.core.management.commands.test import Command
-
-    test_argv = [os.sys.argv[0], '', 'dummyimage'] + os.sys.argv[1:]
-    test_command = Command()
-    test_command.run_from_argv(test_argv)
